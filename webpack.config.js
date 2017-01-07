@@ -5,7 +5,7 @@ module.exports = {
     // devtool: 'cheap-module-source-map',
     context: path.join(__dirname, 'src'),
     entry: {
-        app: './js/App.js'
+        app: './js/index.js'
     },
     output: {
         path: path.join(__dirname, 'dist'),
