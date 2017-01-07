@@ -1,0 +1,40 @@
+$black: #222;
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya:400,700);
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    font-family: 'Alegreya', serif;
+    color: $black;
+}
+
+.main {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    border: {
+        left: 20px solid transparent;
+        right: 20px solid transparent;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+	width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+.footer a {
+    color: #444;
+}
