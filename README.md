@@ -1,4 +1,5 @@
-Restaurant finder app.
+# Restaurant finder app built using React, Redux and the Google Maps API.
+## WORK IN PROGRESS - VERY MUCH UNFINISHED!
 
 To install run ````npm install````
 

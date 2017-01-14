@@ -16,7 +16,7 @@ class RestaurantList extends Component {
 
     render() {
         return (
-            <div className="list">
+            <div className="list container">
                 <h3>Restaurant list here</h3>
                 <p>{this.renderList()}</p>
             </div>

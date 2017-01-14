@@ -15,14 +15,14 @@ class RestaurantDetails extends Component {
 
         if (!this.props.restaurant) {
             return (
-                <div className="details">
+                <div className="details container">
                     <h3>Restaurant details here</h3>
                     <p>Please select a restaurant.</p>
                 </div>
             );
         }
         return (
-            <div className="details">
+            <div className="details container">
                 <h3>Restaurant details here</h3>
                 <p>{this.props.restaurant.name}</p>
                 <p>{this.props.restaurant.address}</p>

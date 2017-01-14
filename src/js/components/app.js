@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Map from '../containers/map';
 import RestaurantDetails from '../containers/restaurant_details';
 import RestaurantList from '../containers/restaurant_list';
+import SearchForm from '../containers/search_form';
 
 class App extends Component {
 
@@ -11,6 +12,7 @@ class App extends Component {
             <div className="wrapper">
                 <h1 className="title">Restaurant Finder</h1>
                 <div className="main">
+                    <SearchForm />
                     <Map />
                     <RestaurantDetails />
                     <RestaurantList />

@@ -18,6 +18,7 @@ h1, h2, h3, p {
 
 #app, .wrapper {
     height: 100%;
+    background-color: #abcdf2;
 }
 
 .title {
@@ -27,6 +28,7 @@ h1, h2, h3, p {
 }
 
 .main {
+    // Subtract height of title and footer.
     height: calc(100% - 80px);
     width: 100%;
     margin: 0 auto;
@@ -37,20 +39,38 @@ h1, h2, h3, p {
     }
     display: flex;
     flex-flow: column wrap;
-    div {
-        border: 2px solid black;
+}
+
+// Class also applies to form component.
+.container {
+    background-color: #fff;
+    border: 2px solid black;    
+}
+
+.form {
+    // Subtract margins from dimensions.
+    height: calc(30% - 20px);
+    width: calc(70% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    input {
+        margin: 10px;
     }
 }
 
 .map {
-    height: calc(60% - 20px);
+    // Subtract margins from dimensions.
+    height: calc(40% - 20px);
     width: calc(70% - 20px);
     margin-right: 20px;
     margin-bottom: 20px;
 }
 
 .details {
-    height: 40%;
+    height: 30%;
     width: calc(70% - 20px);
     margin-right: 20px;
 }
