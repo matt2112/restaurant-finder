@@ -36,6 +36,7 @@
     "webpack-dev-server": "^2.2.0-rc.0"
   },
   "dependencies": {
+    "google-map-react": "^0.22.3",
     "normalize.css": "^5.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

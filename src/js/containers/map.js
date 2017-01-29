@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import GoogleMap from 'google-map-react';
 
 import { selectRestaurant } from '../actions/select_restaurant';
 
 class Map extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            center: {lat: 59.938043, lng: 30.337157},
+            zoom: 9
+        }
+    }
 
     displayRestaurants() {
         return this.props.restaurants.map((restaurant) => {
@@ -25,6 +35,11 @@ class Map extends Component {
                 <ul>
                     {this.displayRestaurants()}
                 </ul>
+                <GoogleMap
+                    className="map__googlemap"
+                    defaultCenter={this.state.center}
+                    defaultZoom={this.state.zoom}>
+                </GoogleMap>
             </div>
         );
     }
