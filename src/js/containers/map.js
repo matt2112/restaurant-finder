@@ -31,10 +31,11 @@ class Map extends Component {
     render() {
         return (
             <div className="map container">
-                <h3>Map Here</h3>
+                {/*
                 <ul>
                     {this.displayRestaurants()}
                 </ul>
+                */}
                 <GoogleMap
                     className="map__googlemap"
                     defaultCenter={this.state.center}

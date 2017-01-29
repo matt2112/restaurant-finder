@@ -1,0 +1,30 @@
+.title {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.main {
+    // Subtract height of title and footer.
+    height: calc(100% - 80px);
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border: {
+        left: 20px solid transparent;
+        right: 20px solid transparent;
+    }
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.footer {
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+
+    a {
+        color: #444;
+    }
+}

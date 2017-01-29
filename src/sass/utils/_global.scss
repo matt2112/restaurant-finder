@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya:400,700);
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Alegreya', serif;
+    color: $black;
+    height: 100%;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+#app, .wrapper {
+    height: 100%;
+    background-color: #abcdf2;
+}
+
+// Class also applies to form component.
+.container {
+    background-color: #fff;
+    border: 2px solid black;    
+}

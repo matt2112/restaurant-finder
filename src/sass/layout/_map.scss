@@ -1,0 +1,13 @@
+.map {
+    // Subtract margins from dimensions.
+    height: calc(40% - 20px);
+    width: calc(70% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    &__googlemap {
+        float: left;
+        height: 200px;
+        width: 200px;
+    }
+}
