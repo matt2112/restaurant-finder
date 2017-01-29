@@ -1,46 +1,56 @@
+var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const VENDOR_LIBS = [
+    'react', 'react-dom', 'react-redux', 'redux'
+];
+
 module.exports = {
-    // devtool: 'cheap-module-source-map',
-    context: path.join(__dirname, 'src'),
     entry: {
-        app: './js/index.js'
+        bundle: './src/js/index.js',
+        vendor: VENDOR_LIBS
     },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.jsx?$/,
-                loader: 'babel',
-                include: /src/
+                use: 'babel-loader',
+                test: /\.js$/,
+                exclude: /node_modules/
             },
             {
-                test: /.scss$/,
-                loaders: ['style', 'css', 'sass']
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+                test: /\.scss$/
             },
             {
-                test: /\.css$/,
-                loaders: ['style', 'css']
+                use: ['style-loader', 'css-loader'],
+                test: /\.css$/
             },
             {
-                test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-                loader: 'file-loader?name=[name].[ext]'
+                test: /\.(jpe?g|png|gif|svg|ico)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: { limit: 40000 }
+                    },
+                    'image-webpack-loader'
+                ]
             }
         ]
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        inline: true,
-        stats: 'errors-only'
-    },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'manifest']
+        }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'index.html'),
-            hash: true
+            template: 'src/index.html'
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
     ]
 };
